@@ -27,8 +27,8 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-BATCH_SIZE = 50
-EPOCHS = 5
+BATCH_SIZE = 27
+EPOCHS = 8
 
 ################
 # DO NOT MODIFY
@@ -85,6 +85,7 @@ def train(train_data_gen, test_data_gen):
         keras.layers.Conv2D(filters=4, kernel_size=3, padding='same', activation='relu', input_shape=(IMG_HEIGHT, IMG_WIDTH, 3)),
         keras.layers.Flatten(),
         keras.layers.Dense(128, activation='relu'),
+        keras.layers.Dense(128, activation='tanh'),
         keras.layers.Dense(NUM_CLASSES, activation='softmax')
     ])
     ####################################################################
